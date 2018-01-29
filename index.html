@@ -183,6 +183,14 @@
     <footer>
         <p>Heartland All Species Project • 5644 Charlotte • Kansas City MO 64110</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var vids = document.getElementsByTagName('video')
+            for (var i = 0; i < vids.length; i += 1) {
+                vids[i].setAttribute('muted', true)
+            }
+        })
+    </script>
 </body>
 
 </html>
