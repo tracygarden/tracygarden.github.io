@@ -9,12 +9,16 @@
 </head>
 
 <body>
-    <div class="video-background">
-        <div class="video-foreground">
-            <iframe src="https://www.youtube.com/embed/rvRLvbGrMSc?mute=1&controls=0&showinfo=0&rel=0&autoplay=1&loop=1&modestbranding=1&autohide=1&list=PLuz7W9LO3sve3ypLkcTfyZpQselpLtRtc"
-                frameborder="0" allowfullscreen></iframe>
+    <section id="home-banner-box" class="home-banner loading">
+        <div class="image video-slide" style="background-image: url(https://i0.wp.com/www.fox16.com/wp-content/uploads/sites/84/2019/03/FIRE20FLAMES_1551682391250-1.jpg_75852588_ver1.0-1.jpg?resize=2560%2C1440&ssl=1)">
+            <div class="video-background">
+                <div class="video-foreground" id="YouTubeBackgroundVideoPlayer">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+    
+    <script async src="https://www.youtube.com/iframe_api"></script>
     <section class="content">
         <div class="intro">
             <h1 id="tracy_title">TRACY GARDEN</h1>
@@ -181,6 +185,45 @@
     <footer>
         <p>Heartland All Species Project • 5644 Charlotte • Kansas City MO 64110</p>
     </footer>
+    <script>
+        function onYouTubeIframeAPIReady() {
+            var player;
+            player = new YT.Player('YouTubeBackgroundVideoPlayer', {
+                videoId: 'rvRLvbGrMSc', // YouTube Video ID
+                width: 1280,               // Player width (in px)
+                height: 720,              // Player height (in px)
+                playerVars: {
+                    autoplay: 1,        // Auto-play the video on load
+                    autohide: 1,
+                    disablekb: 1, 
+                    controls: 0,        // Hide pause/play buttons in player
+                    showinfo: 0,        // Hide the video title
+                    modestbranding: 1,  // Hide the Youtube Logo
+                    loop: 1,            // Run the video in a loop
+                    fs: 0,              // Hide the full screen button
+                    autohide: 0,         // Hide video controls when playing
+                    rel: 0,
+                    enablejsapi: 1
+                },
+                events: {
+                    onReady: function(e) {
+                        e.target.mute();
+                        e.target.setPlaybackQuality('hd1080');
+                    },
+                    onStateChange: function(e) {
+                    if(e && e.data === 1){
+                        var videoHolder = document.getElementById('home-banner-box');
+                        if(videoHolder && videoHolder.id){
+                            videoHolder.classList.remove('loading');
+                        }
+                    }else if(e && e.data === 0){
+                        e.target.playVideo()
+                    }
+                    }
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
