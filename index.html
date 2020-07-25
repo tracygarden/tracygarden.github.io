@@ -187,6 +187,19 @@
         <p>Heartland All Species Project • 5644 Charlotte • Kansas City MO 64110</p>
     </footer>
     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var body = document.getElementsByTagName('body')[0];
+            var coverDivTop = document.createElement('div')
+            var coverDivBottom = document.createElement('div')
+            coverDivTop.setAttribute('class', 'cover-video-top')
+            coverDivBottom.setAttribute('class', 'cover-video-bottom')
+            body.insertBefore(coverDivBottom, body.children[0])
+            body.insertBefore(coverDivTop, body.children[0])
+            // window.setTimeout(function() {
+            //     body.removeChild(coverDivTop)
+            //     body.removeChild(coverDivBottom)
+            // },7000)
+        })
         function onYouTubeIframeAPIReady() {
             var player;
             player = new YT.Player('YouTubeBackgroundVideoPlayer', {
@@ -204,7 +217,8 @@
                     fs: 0,              // Hide the full screen button
                     autohide: 0,         // Hide video controls when playing
                     rel: 0,
-                    enablejsapi: 1
+                    enablejsapi: 1,
+                    iv_load_policy: 3
                 },
                 events: {
                     onReady: function(e) {
