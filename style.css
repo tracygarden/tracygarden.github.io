@@ -79,6 +79,9 @@ hr {
 .page .video {
     text-align: center;
 }
+.video {
+    margin: 3rem 0 2rem;
+}
 a {
     color: orange;
 }

@@ -30,15 +30,31 @@
             <div class="panel">
                 <article class="page" id="biochar">
                     <h2>Biochar</h2>
-                    <p>We use biochar at Tracy Garden. Biochar is an ancient technology that can literally help save the world</p>
-                    <h3>How to Do It & Why</h3>
+                    <p>We use biochar at Tracy Garden. Biochar is an ancient technology that can literally help save the world.</p>
+                    <!-- <h3>How to Do It & Why</h3> -->
                     <div class="video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/2zSiQGzgfmo" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/m5FhqRpNhPw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
+                    <h3>We are doing a fundraiser to forward our work.</h3>
+                    <p>
+                        We are asking for support to provide an internship for a UMKC Environmental Studies student. 
+                        The intern will help promote neighborhood community groups to put and keep carbon in the soil as one 
+                        means of mitigating climate change. They will prepare biochar and soil inoculants that promote more 
+                        soil fungal activity. They will teach no-till vegetable growing; the making of mycorrhizal fungi; 
+                        and the use of cover crops. The intern will help maintain education at Tracy Garden and oversee 
+                        programs there.
+                    </p>
+                    <p>We are trying to weave environmental understanding and awareness into neighborhood community culture, 
+                        so that it is present in most interactions, thereby keeping it alive. This will lead to action supported 
+                        by the neighborhood groups.
+                    </p>
                     <h3>Want to make Biochar?</h3>
                     <p>You can make Biochar yourself. It will make your soil fertile for generations, keeping the char’s carbon
                         locked up in the soil.</p>
                     <p>Download PDF: <a href="http://organotill.org/assets/Put_Carbon_in_Soil.pdf">Putting and keeping carbon in the soil</a></p>
+                    <div class="video">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/2zSiQGzgfmo" frameborder="0" allowfullscreen></iframe>
+                    </div>
                     </article>
             </div>
             <div class="panel">
@@ -187,6 +203,13 @@
         <p>Heartland All Species Project • 5644 Charlotte • Kansas City MO 64110</p>
     </footer>
     <script>
+        function removeVideoMasks() {
+            var body = document.getElementsByTagName('body')[0];
+            var coverDivTop = document.getElementsByClassName('cover-video-top')[0];
+            var coverDivBottom = document.getElementsByClassName('cover-video-bottom')[0];
+            body.removeChild(coverDivTop)
+            body.removeChild(coverDivBottom)
+        }
         document.addEventListener('DOMContentLoaded', function() {
             var body = document.getElementsByTagName('body')[0];
             var coverDivTop = document.createElement('div')
@@ -195,10 +218,6 @@
             coverDivBottom.setAttribute('class', 'cover-video-bottom')
             body.insertBefore(coverDivBottom, body.children[0])
             body.insertBefore(coverDivTop, body.children[0])
-            // window.setTimeout(function() {
-            //     body.removeChild(coverDivTop)
-            //     body.removeChild(coverDivBottom)
-            // },7000)
         })
         function onYouTubeIframeAPIReady() {
             var player;
@@ -224,6 +243,7 @@
                     onReady: function(e) {
                         e.target.mute();
                         e.target.setPlaybackQuality('hd1080');
+                        window.setTimeout(removeVideoMasks, 4000)
                     },
                     onStateChange: function(e) {
                     if(e && e.data === 1){
