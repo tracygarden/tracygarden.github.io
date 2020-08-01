@@ -203,21 +203,20 @@
         <p>Heartland All Species Project • 5644 Charlotte • Kansas City MO 64110</p>
     </footer>
     <script>
+        var classNames = ['top', 'bottom'];
         function removeVideoMasks() {
             var body = document.getElementsByTagName('body')[0];
-            var coverDivTop = document.getElementsByClassName('cover-video-top')[0];
-            var coverDivBottom = document.getElementsByClassName('cover-video-bottom')[0];
-            body.removeChild(coverDivTop)
-            body.removeChild(coverDivBottom)
+            for (var i = 0; i < classNames.length; i += 1) {
+                document.getElementsByClassName('cover-video-' + classNames[i])[0].className += ' disappear';
+            }
         }
         document.addEventListener('DOMContentLoaded', function() {
             var body = document.getElementsByTagName('body')[0];
-            var coverDivTop = document.createElement('div')
-            var coverDivBottom = document.createElement('div')
-            coverDivTop.setAttribute('class', 'cover-video-top')
-            coverDivBottom.setAttribute('class', 'cover-video-bottom')
-            body.insertBefore(coverDivBottom, body.children[0])
-            body.insertBefore(coverDivTop, body.children[0])
+            for (var i = 0; i < classNames.length; i += 1) {
+                var div = document.createElement('div');
+                div.className = 'cover-video-' + classNames[i];
+                body.insertBefore(div, body.children[0]);
+            }
         })
         function onYouTubeIframeAPIReady() {
             var player;
