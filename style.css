@@ -147,3 +147,21 @@ footer {
 .cover-video-top.disappear, .cover-video-bottom.disappear {
     opacity: 0;
 }
+
+.donate-banner {
+    margin: 3rem 5rem 0;
+    
+}
+.donate-banner a {
+    width: 100%;
+    background-color: #7e538ce3;
+    padding: 1rem;
+    border-radius: 2rem;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.donate-banner a:hover {
+    background-color: #ba90c7e3;
+    color: #faff00;
+}
