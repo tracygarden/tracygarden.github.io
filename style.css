@@ -45,6 +45,16 @@ body {
 .intro {
     padding: 3em 0 20em;
 }
+
+.intro a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.intro a:hover {
+    text-decoration: underline;
+}
+
 nav a {
     margin: 0 .5em;
 }
