@@ -57,7 +57,7 @@
                         Walter Jehne - Please watch and absorb (i am still re-viewing and digesting it my self) his video presentation. His reframing the climate solution has given me great hope.
                     </p>
                     <div class="video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/DQN9t-g2J-0" frameborder="0"
+                        <iframe width="560" height="315" src="http://www.youtube.com/embed/DQN9t-g2J-0" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -66,7 +66,7 @@
                         David C. Johnson and his wife Su have created the Johnson-Su compost bioreactor which creates fungal rich microbial inoculant that helps rebalance soil life creating the soil carbon sponge that Jehne talks about. Our task will be to make his work more understandable.
                     </p>
                     <div class="video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/cO2nGHq40Xc" frameborder="0"
+                        <iframe width="560" height="315" src="http://www.youtube.com/embed/cO2nGHq40Xc" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -74,7 +74,7 @@
                         Christine Jones - Her understanding of the social and communication capacities of soil microbes and their working together to create carbon rich soil is eye opening. Jones shows how ineffective monocrops are to produce healthy food and sequester carbon. 
                     </p>
                     <div class="video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/GcTBRL0SYq0" frameborder="0"
+                        <iframe width="560" height="315" src="http://www.youtube.com/embed/GcTBRL0SYq0" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -82,7 +82,7 @@
                         And then there is Gabe Brown, practical farmer/rancher who is putting this regenerative agriculture to the benefit of his and the Earth’s bottom line. 
                     </p>
                     <div class="video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/TLwsn8snsMc" frameborder="0"
+                        <iframe width="560" height="315" src="http://www.youtube.com/embed/TLwsn8snsMc" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -95,7 +95,7 @@
                         Growing an inoculant to favor carbon sequestering fungi in the soil along with a great diversity of other organisms that aid plants and make spongy rich soil regenerating the water cycle.
                     </p>
                     <div class="video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/s95irTofaaw" frameborder="0"
+                        <iframe width="560" height="315" src="http://www.youtube.com/embed/s95irTofaaw" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -110,7 +110,7 @@
                     </p>
                     <!-- <h3>How to Do It & Why</h3> -->
                     <div class="video">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/m5FhqRpNhPw" frameborder="0"
+                        <iframe width="560" height="315" src="http://www.youtube.com/embed/m5FhqRpNhPw" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
@@ -310,10 +310,12 @@
     <script>
         var classNames = ['top', 'bottom'];
         function removeVideoMasks() {
-            var body = document.getElementsByTagName('body')[0];
             for (var i = 0; i < classNames.length; i += 1) {
                 document.getElementsByClassName('cover-video-' + classNames[i])[0].className += ' disappear';
             }
+        }
+        function removeSpinnerMask() {
+            document.getElementsByClassName('cover-spinner')[0].className += ' disappear';
         }
         document.addEventListener('DOMContentLoaded', function () {
             var body = document.getElementsByTagName('body')[0];
@@ -322,6 +324,9 @@
                 div.className = 'cover-video-' + classNames[i];
                 body.insertBefore(div, body.children[0]);
             }
+            var spinnerCover = document.createElement('div');
+            spinnerCover.className = 'cover-spinner';
+            body.insertBefore(spinnerCover, body.children[0]);
         })
         function onYouTubeIframeAPIReady() {
             var player;
@@ -347,10 +352,11 @@
                     onReady: function (e) {
                         e.target.mute();
                         e.target.setPlaybackQuality('hd1080');
-                        window.setTimeout(removeVideoMasks, 4000)
                     },
                     onStateChange: function (e) {
                         if (e && e.data === 1) {
+                            removeSpinnerMask();
+                            window.setTimeout(removeVideoMasks, 4000)
                             var videoHolder = document.getElementById('home-banner-box');
                             if (videoHolder && videoHolder.id) {
                                 videoHolder.classList.remove('loading');
