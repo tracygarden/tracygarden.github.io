@@ -92,7 +92,7 @@ hr {
 .video {
     margin: 3rem 0 2rem;
 }
-a {
+a, .intro h2 a {
     color: orange;
 }
 
