@@ -189,6 +189,20 @@ footer {
     color: #faff00;
 }
 
+.donate-button {
+    width: 100%;
+    text-align: center;
+}
+
+.donate-button a {
+    color: #6b82ff;
+}
+
+.event-details {
+    /* margin-left: 1rem; */
+    margin-bottom: 2rem;
+}
+
 .push-up {
     margin-bottom: 3rem;
 }
