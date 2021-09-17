@@ -192,3 +192,7 @@ footer {
 .push-up {
     margin-bottom: 3rem;
 }
+
+.no-top-margin {
+    margin-top: 0;
+}
