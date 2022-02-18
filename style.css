@@ -210,3 +210,17 @@ footer {
 .no-top-margin {
     margin-top: 0;
 }
+
+.temporary-announcement {
+    background: #fff;
+    padding: 0.3rem;
+    margin-top: 1rem;
+}
+
+.temporary-announcement h2, .temporary-announcement h3 {
+    color: #222;
+}
+
+.temporary-announcement h3 {
+    margin-top: 0;
+}
