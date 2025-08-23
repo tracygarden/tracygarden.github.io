@@ -9,10 +9,6 @@
 img#earth {
     left: 15em;
     margin-top: 12em;
-
-    @media (max-width: 600px) {
-        width: 90%;
-    }
 }
 .video-foreground,
 .video-background iframe {
@@ -89,20 +85,11 @@ h3 {
     padding: 2em;
     display: flex;
     flex-direction: column;
-
-    @media (max-width: 600px) {
-        border-radius: 0px;
-        border: 0px;
-    }
 }
 
 .panel {
     background-color: rgba(0, 0, 0, 1);
     padding: 3em 10em;
-
-    @media (max-width: 600px) {
-        padding: 0px; /* Adjust font size for smaller screens */
-    }
 }
 
 hr {
@@ -203,11 +190,6 @@ footer {
     text-align: left;
     display: flex;
     justify-content: space-between;
-
-    @media (max-width: 600px) {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 .donate-banner .donate-button {
     font-size: 36px;
@@ -221,11 +203,6 @@ footer {
     width: auto;
     line-height: 36px;
     font-weight: bold;
-    
-    @media (max-width: 600px) {
-        margin-bottom: 2rem;
-    }
-
 }
 
 .donate-banner .donate-button:hover {
@@ -271,13 +248,231 @@ footer {
 
 .feedback-form {
     margin: 0 auto;
-
-    @media (max-width: 600px) {
-        width: 90%;
-    }
 }
 
 .video-feedback {
     margin: 0 auto;
     width: max-content;
+}
+
+/* Donation Options Styling */
+.donation-options {
+    margin: 2rem 0 !important;
+}
+
+.donation-options h3 {
+    text-align: center !important;
+    margin-bottom: 2rem !important;
+    color: #e4c091 !important;
+    font-size: 1.5em !important;
+}
+
+.donation-options .payment-option {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+    border: 2px solid rgba(255, 235, 59, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.donation-options .payment-option:hover {
+    border-color: rgba(255, 165, 0, 0.6);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06));
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.donation-options .payment-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.payment-option h4 {
+    color: #ffeb3b;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.donation-options .payment-option h4::before {
+    content: '💳';
+    font-size: 1.2em;
+}
+
+.payment-option h4:nth-of-type(1)::before {
+    content: '💳'; /* PayPal */
+}
+
+.payment-info {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 1rem 0;
+    color: #fff;
+    font-weight: bold;
+    position: relative;
+}
+
+.donation-options .payment-info a {
+    color: #ffeb3b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.donation-options .payment-info a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.donation-options .payment-note {
+    font-size: 0.95em;
+    color: #bbb;
+    margin-top: 1rem;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* Copy button styling */
+.donation-options button {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.donation-options button:hover {
+    background: linear-gradient(135deg, #f7931e, #ff6b35);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+.donation-options button:active {
+    transform: translateY(0);
+}
+
+/* PayPal specific styling */
+.donation-options .payment-option:nth-child(2) h4::before {
+    content: '🅿️';
+}
+
+/* Zelle specific styling */
+.donation-options .payment-option:nth-child(3) h4::before {
+    content: '🏦';
+}
+
+/* Venmo specific styling */
+.donation-options .payment-option:nth-child(4) h4::before {
+    content: '📱';
+}
+
+/* Mobile Media Queries */
+@media (max-width: 600px) {
+    img#earth {
+        width: 90%;
+        left: 0;
+        margin-top: 2em;
+        position: relative;
+    }
+    
+    .page {
+        border-radius: 0px;
+        border: 0px;
+        margin: 0;
+        padding: 1.5em;
+    }
+    
+    .panel {
+        padding: 1rem;
+    }
+    
+    .video iframe {
+        width: 90%;
+        max-width: none;
+        height: 200px;
+    }
+    
+    .donate-banner {
+        flex-direction: column;
+        align-items: center;
+        margin: 1rem;
+    }
+    
+    .donate-banner .donate-button {
+        margin-bottom: 2rem;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .donate-banner img {
+        width: 80%;
+        max-width: 250px;
+    }
+    
+    .feedback-form {
+        width: 90%;
+        height: 600px;
+    }
+    
+    .intro {
+        padding: 1em 0 5em;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    html {
+        font-size: 14px;
+    }
+    
+    .donation-options .payment-option {
+        padding: 1.5rem !important;
+        margin-bottom: 1.5rem !important;
+        border-radius: 0.75rem !important;
+    }
+    
+    .donation-options .payment-option h4 {
+        font-size: 1.2em !important;
+        margin-bottom: 1rem !important;
+    }
+    
+    .donation-options .payment-info {
+        font-size: 1em !important;
+        padding: 0.75rem 1rem !important;
+    }
+    
+    .donation-options button {
+        width: 100% !important;
+        padding: 1rem !important;
+        font-size: 1em !important;
+    }
+    
+    .donation-options h3 {
+        font-size: 1.3em !important;
+    }
 }
