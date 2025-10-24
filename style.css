@@ -43,7 +43,8 @@ body {
 }
 
 .intro {
-    padding: 3em 0 20em;
+    /* reduce excessive bottom padding so main content appears sooner */
+    padding: 3em 0 8em;
 }
 
 .intro a {
@@ -57,6 +58,183 @@ body {
 
 .intro h3 {
     margin: 0 0 1rem;
+}
+
+/* Teaser CTA in the intro */
+.intro-teaser {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+.intro-teaser p {
+    margin: 0.25rem 0;
+    color: rgb(255, 255, 229);
+}
+.teaser-link {
+    color: orange;
+    text-decoration: underline;
+}
+.btn-primary, .btn-donate {
+    display: inline-block;
+    padding: 0.6rem 1rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+.btn-primary {
+    background: #6b82ff;
+    color: white;
+}
+.btn-primary:hover {
+    background: #556be0;
+}
+.btn-donate {
+    background: #7e538ce3; /* match donate-banner tone */
+    color: #fff9e6;
+}
+.btn-donate:hover {
+    background: #ba90c7e3;
+}
+
+@media (max-width: 600px) {
+    .intro-teaser { text-align: center; }
+    .btn-primary, .btn-donate { display: block; width: 90%; margin: 0.5rem auto; }
+}
+
+.panel > .page#why-tracy {
+    background-color: rgb(88, 62, 52); /* slightly lighter than other pages */
+    padding: 2.5rem 3rem;
+    border-radius: 1.2rem;
+    border: 2px solid rgba(181,143,74,0.6);
+}
+
+.panel > .page#why-tracy h2 {
+    font-size: 2.1rem;
+    margin-bottom: 0.6rem;
+    color: #fff9c9;
+}
+
+.panel > .page#why-tracy p,
+.panel > .page#why-tracy li {
+    color: #fffbe8; /* improve contrast */
+    line-height: 1.6;
+}
+
+.panel > .page#why-tracy .donate-button a,
+.panel > .page#why-tracy .donate-button a:visited {
+    color: #fff;
+    background: #7e538ce3;
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.panel > .page#why-tracy .donate-button a:hover {
+    background: #a678c6;
+}
+
+/* make sure lists inside this panel have consistent spacing */
+.panel > .page#why-tracy ul {
+    margin-left: 1.2rem;
+}
+
+/* smooth internal anchor scrolling */
+html { scroll-behavior: smooth; }
+
+@media (max-width: 800px) {
+    .panel > .page#why-tracy {
+        padding: 1.6rem 1.2rem;
+    }
+    .panel > .page#why-tracy h2 { font-size: 1.6rem; }
+}
+
+/* Fix layout for donate links inside the Why Tracy panel to avoid overlap on mobile */
+.panel > .page#why-tracy .donate-button {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap; /* allow stacking on narrow screens */
+    margin-top: 0.5rem; /* ensure it's visually below the heading */
+    width: auto; /* override any global full-width rule */
+    text-align: left;
+}
+.panel > .page#why-tracy .donate-button a {
+    display: inline-block; /* ensure anchors size to content */
+}
+
+/* Separator between inline donate links */
+.panel > .page#why-tracy .donate-separator {
+    font-size: 0.95rem;
+    color: rgba(255,255,229,0.95);
+    margin: 0 0.5rem;
+    white-space: nowrap;
+    display: inline-block;
+    align-self: center;
+}
+
+/* Inline donate anchors styled like the other donate buttons */
+.panel > .page#why-tracy .btn-donate-inline {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    border-radius: 0.6rem;
+    background: #7e538ce3;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* When donate buttons wrap on narrow screens, move separator to its own centered line */
+@media (max-width: 480px) {
+    .panel > .page#why-tracy .donate-separator {
+        width: 100%;
+        text-align: center;
+        margin: 0.35rem 0;
+    }
+    .panel > .page#why-tracy .donate-button {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .panel > .page#why-tracy .donate-button {
+        gap: 0.5rem;
+    }
+    .panel > .page#why-tracy .donate-button a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Teaser panel specific styles */
+.panel.teaser-panel {
+    padding: 2rem 6rem; /* narrow the interior padding so content feels less sparse */
+}
+.panel.teaser-panel .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: rgb(88,62,52);
+    padding: 1.2rem 1.6rem;
+    border-radius: 1rem;
+    border: 2px solid rgba(181,143,74,0.5);
+}
+.panel.teaser-panel .page h2 {
+    margin: 0 0 0.6rem 0;
+    color: #fff9c9;
+    font-size: 1.9rem;
+}
+.panel.teaser-panel .page h3 { margin: 0 0 0.8rem 0; }
+.panel.teaser-panel .page .teaser-ctas { margin-top: 0.6rem; }
+.panel.teaser-panel .page .btn-primary, .panel.teaser-panel .page .btn-donate {
+    margin-right: 0.8rem;
+}
+
+@media (max-width: 800px) {
+    .panel.teaser-panel { padding: 1rem; }
+    .panel.teaser-panel .page { padding: 1rem; }
+    .panel.teaser-panel .page h2 { font-size: 1.4rem; }
+    .panel.teaser-panel .page .btn-primary, .panel.teaser-panel .page .btn-donate { display: block; width: 90%; margin: 0.5rem auto; }
 }
 nav a {
     margin: 0 .5em;
