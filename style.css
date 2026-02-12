@@ -238,21 +238,32 @@ html { scroll-behavior: smooth; }
 }
 /* SoundCloud embed */
 .soundcloud-player {
-    max-width: 400px;
+    position: relative;
     margin: 1.5rem auto 0;
 }
-.soundcloud-label {
+.sc-play-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(228, 192, 145, 0.4);
+    border-radius: 2rem;
+    padding: 0.7rem 1.5rem;
     color: #e4c091;
+    font-family: inherit;
     font-size: 1.1em;
-    margin: 0 0 0.4rem;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
 }
-
-@media (max-width: 600px) {
-    .soundcloud-player {
-        max-width: 85%;
-    }
+.sc-play-btn:hover {
+    background: rgba(0, 0, 0, 0.85);
+    border-color: #e4c091;
+}
+.sc-play-icon {
+    font-size: 1.3em;
+    line-height: 1;
 }
 
 nav a {

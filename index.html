@@ -55,8 +55,11 @@
             <h2>New fungal rich compost method can slow climate change</h2>
             <h3>LET'S LOOK AT THE SCIENCE AND EXPAND OUR COMMON SENSE</h3>
             <div class="soundcloud-player">
-                <p class="soundcloud-label">Listen: Quorum Sensing</p>
-                <iframe width="100%" height="20" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F2265339377&color=%23e4c091&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&secret_token=s-LZ9O2nXCTOR"></iframe>
+                <button class="sc-play-btn" id="sc-play-btn" aria-label="Play Quorum Sensing">
+                    <span class="sc-play-icon" id="sc-play-icon">&#9654;</span>
+                    Listen: Quorum Sensing
+                </button>
+                <iframe id="sc-iframe" width="100%" height="1" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F2265339377&color=%23e4c091&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&secret_token=s-LZ9O2nXCTOR" style="position:absolute;left:-9999px;"></iframe>
             </div>
             <img id="earth" src="earth.webp" alt="Earth image representing global climate and soil health">
         </div>
@@ -454,6 +457,35 @@
     <footer>
         <p>Heartland All Species Project • 5644 Charlotte • Kansas City MO 64110</p>
     </footer>
+    <script src="https://w.soundcloud.com/player/api.js"></script>
+    <script>
+        (function() {
+            var iframe = document.getElementById('sc-iframe');
+            var btn = document.getElementById('sc-play-btn');
+            var icon = document.getElementById('sc-play-icon');
+            var widget = SC.Widget(iframe);
+            var playing = false;
+
+            btn.addEventListener('click', function() {
+                widget.toggle();
+            });
+
+            widget.bind(SC.Widget.Events.PLAY, function() {
+                playing = true;
+                icon.textContent = '\u275A\u275A';
+            });
+
+            widget.bind(SC.Widget.Events.PAUSE, function() {
+                playing = false;
+                icon.textContent = '\u25B6';
+            });
+
+            widget.bind(SC.Widget.Events.FINISH, function() {
+                playing = false;
+                icon.textContent = '\u25B6';
+            });
+        })();
+    </script>
     <script>
         var classNames = ['top', 'bottom'];
         function removeVideoMasks() {
