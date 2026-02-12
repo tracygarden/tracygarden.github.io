@@ -236,6 +236,25 @@ html { scroll-behavior: smooth; }
     .panel.teaser-panel .page h2 { font-size: 1.4rem; }
     .panel.teaser-panel .page .btn-primary, .panel.teaser-panel .page .btn-donate { display: block; width: 90%; margin: 0.5rem auto; }
 }
+/* SoundCloud embed */
+.soundcloud-player {
+    max-width: 400px;
+    margin: 1.5rem auto 0;
+}
+.soundcloud-label {
+    color: #e4c091;
+    font-size: 1.1em;
+    margin: 0 0 0.4rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 600px) {
+    .soundcloud-player {
+        max-width: 85%;
+    }
+}
+
 nav a {
     margin: 0 .5em;
 }
