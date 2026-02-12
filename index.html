@@ -33,7 +33,7 @@
             <img class="sc-btn-img" src="quorum-sensor.png" alt="Quorum Sensor - Play">
             <span class="sc-btn-label" id="sc-btn-label">play the microbe song</span>
         </button>
-        <iframe id="sc-iframe" width="100%" height="1" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F2265339377&color=%23e4c091&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&secret_token=s-LZ9O2nXCTOR" style="position:absolute;left:-9999px;"></iframe>
+        <iframe id="sc-iframe" width="100%" height="1" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F2265339377&color=%23e4c091&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&secret_token=s-LZ9O2nXCTOR" style="position:absolute;opacity:0;height:0;width:0;overflow:hidden;pointer-events:none;"></iframe>
     </div>
     <section id="home-banner-box" class="home-banner loading">
         <div class="image video-slide">
@@ -466,22 +466,36 @@
             var btn = document.getElementById('sc-play-btn');
             var label = document.getElementById('sc-btn-label');
             var widget = SC.Widget(iframe);
+            var ready = false;
+            var playing = false;
+
+            widget.bind(SC.Widget.Events.READY, function() {
+                ready = true;
+            });
 
             btn.addEventListener('click', function() {
-                widget.toggle();
+                if (!ready) return;
+                if (playing) {
+                    widget.pause();
+                } else {
+                    widget.play();
+                }
             });
 
             widget.bind(SC.Widget.Events.PLAY, function() {
+                playing = true;
                 btn.classList.add('playing');
                 label.textContent = 'playing';
             });
 
             widget.bind(SC.Widget.Events.PAUSE, function() {
+                playing = false;
                 btn.classList.remove('playing');
                 label.textContent = 'paused';
             });
 
             widget.bind(SC.Widget.Events.FINISH, function() {
+                playing = false;
                 btn.classList.remove('playing');
                 label.textContent = 'play the microbe song';
             });
