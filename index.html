@@ -20,6 +20,8 @@
     <meta name="twitter:description" content="Learn about soil science solutions to climate change through Johnson-Su compost bioreactors.">
     <meta name="twitter:image" content="https://tracygarden.org/earth.webp">
     
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link href="style.css?v=2" rel="stylesheet">
     <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
 </head>
@@ -29,7 +31,7 @@
     <div class="soundcloud-player">
         <button class="sc-play-btn" id="sc-play-btn" aria-label="Play Quorum Sensing">
             <img class="sc-btn-img" src="quorum-sensor.png" alt="Quorum Sensor - Play">
-            <span class="sc-btn-label" id="sc-btn-label">click to play</span>
+            <span class="sc-btn-label" id="sc-btn-label">play the microbe song</span>
         </button>
         <iframe id="sc-iframe" width="100%" height="1" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F2265339377&color=%23e4c091&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&secret_token=s-LZ9O2nXCTOR" style="position:absolute;left:-9999px;"></iframe>
     </div>
@@ -481,7 +483,7 @@
 
             widget.bind(SC.Widget.Events.FINISH, function() {
                 btn.classList.remove('playing');
-                label.textContent = 'click to play';
+                label.textContent = 'play the microbe song';
             });
         })();
     </script>
