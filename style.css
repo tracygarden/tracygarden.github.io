@@ -238,7 +238,7 @@ html { scroll-behavior: smooth; }
 }
 /* SoundCloud embed */
 .soundcloud-player {
-    position: fixed;
+    position: absolute;
     top: 1rem;
     left: 50%;
     transform: translateX(-50%);
@@ -274,7 +274,7 @@ html { scroll-behavior: smooth; }
 }
 .sc-btn-label {
     color: #e4c091;
-    font-size: 0.85em;
+    font-size: 1.15em;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-shadow: 0 1px 4px rgba(0,0,0,0.8);
