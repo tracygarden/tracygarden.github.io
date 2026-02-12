@@ -290,6 +290,16 @@ html { scroll-behavior: smooth; }
 }
 
 @media (max-width: 600px) {
+    .soundcloud-player {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        margin: 1rem 0;
+        z-index: 1;
+    }
     .sc-btn-img {
         width: 110px;
         height: 110px;
