@@ -312,6 +312,18 @@ html { scroll-behavior: smooth; }
     }
 }
 
+.scroll-prompt {
+    color: #e4c091;
+    font-size: 0.95em;
+    margin: 0.8rem 0 0;
+    font-style: italic;
+}
+.practical-heading {
+    font-size: 1.6em;
+    color: #fff9c9;
+    margin-top: 2.5rem;
+}
+
 nav a {
     margin: 0 .5em;
 }
