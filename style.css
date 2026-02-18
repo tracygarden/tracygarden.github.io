@@ -284,20 +284,28 @@ html { scroll-behavior: smooth; }
     .top-banner {
         flex-direction: column;
         align-items: center;
-        padding: 1rem;
-        gap: 1rem;
+        padding: 0.75rem 1rem;
+        gap: 0.75rem;
     }
     .top-banner .donate-button {
         position: static;
-        align-self: flex-start;
+        order: 2;
+        font-size: 28px !important;
+        padding: 0.7rem 1rem !important;
+        line-height: 28px !important;
+        margin: 1.5rem 0;
     }
     .top-banner .climatekc-link {
         position: static;
-        align-self: flex-end;
+        order: 3;
+    }
+    .top-banner .climatekc-link img {
+        width: 180px;
     }
     .ode-video-banner {
         padding: 1rem;
-        order: -1;
+        width: 100%;
+        order: 1;
     }
     .ode-title {
         font-size: 1.3em;
