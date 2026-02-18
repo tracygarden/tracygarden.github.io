@@ -236,73 +236,71 @@ html { scroll-behavior: smooth; }
     .panel.teaser-panel .page h2 { font-size: 1.4rem; }
     .panel.teaser-panel .page .btn-primary, .panel.teaser-panel .page .btn-donate { display: block; width: 90%; margin: 0.5rem auto; }
 }
-/* SoundCloud embed */
-.soundcloud-player {
-    position: absolute;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-}
-.sc-play-btn {
+/* Top banner: donate + video + climate logo */
+.top-banner {
+    position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: transform 0.15s, filter 0.15s;
+    justify-content: center;
+    padding: 1.5rem 2rem 2.5rem;
 }
-.sc-play-btn:hover {
-    transform: scale(1.08);
-    filter: brightness(1.15);
+.top-banner .donate-button {
+    position: absolute;
+    left: 2rem;
+    top: 1.5rem;
 }
-.sc-play-btn:active {
-    transform: scale(0.97);
-}
-.sc-btn-img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    animation: sc-glow 2.5s ease-in-out infinite;
-}
-.sc-play-btn.playing .sc-btn-img {
-    animation: sc-glow-playing 1.5s ease-in-out infinite;
-}
-.sc-btn-label {
-    color: #e4c091;
-    font-size: 1.15em;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+.top-banner .climatekc-link {
+    position: absolute;
+    right: 2rem;
+    top: 1.5rem;
 }
 
-@keyframes sc-glow {
-    0%, 100% { box-shadow: 0 0 8px 2px rgba(100, 200, 50, 0.4); }
-    50% { box-shadow: 0 0 18px 6px rgba(100, 200, 50, 0.7); }
+/* Ode video banner */
+.ode-video-banner {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem 2rem;
+    flex: 1;
+    max-width: 650px;
 }
-@keyframes sc-glow-playing {
-    0%, 100% { box-shadow: 0 0 10px 3px rgba(228, 192, 145, 0.5); }
-    50% { box-shadow: 0 0 22px 8px rgba(228, 192, 145, 0.85); }
+.ode-title {
+    color: #fff9c9;
+    font-size: 1.8em;
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+}
+.ode-subtitle {
+    color: #e4c091;
+    font-size: 1em;
+    margin: 0 0 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+.ode-video-banner .video {
+    margin: 0;
 }
 
 @media (max-width: 600px) {
-    .soundcloud-player {
-        position: relative;
-        top: auto;
-        left: auto;
-        transform: none;
-        display: flex;
-        justify-content: center;
-        margin: 1rem 0;
-        z-index: 1;
+    .top-banner {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 1rem;
     }
-    .sc-btn-img {
-        width: 110px;
-        height: 110px;
+    .top-banner .donate-button {
+        position: static;
+        align-self: flex-start;
+    }
+    .top-banner .climatekc-link {
+        position: static;
+        align-self: flex-end;
+    }
+    .ode-video-banner {
+        padding: 1rem;
+        order: -1;
+    }
+    .ode-title {
+        font-size: 1.3em;
     }
 }
 
@@ -433,27 +431,21 @@ footer {
     z-index: -1;
 }
 
-.donate-banner {
-    margin: 3rem 5rem 0;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-}
-.donate-banner .donate-button {
-    font-size: 36px;
+.top-banner .donate-button {
+    font-size: 42px;
     background-color: #7e538ce3;
-    padding: 1rem;
+    padding: 1.2rem 1.5rem;
     border-radius: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     width: auto;
-    line-height: 36px;
+    line-height: 42px;
     font-weight: bold;
 }
 
-.donate-banner .donate-button:hover {
+.top-banner .donate-button:hover {
     background-color: #ba90c7e3;
     color: #faff00;
 }

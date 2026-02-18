@@ -28,13 +28,6 @@
 
 <body>
     <div id="top"></div>
-    <div class="soundcloud-player">
-        <button class="sc-play-btn" id="sc-play-btn" aria-label="Play Quorum Sensing">
-            <img class="sc-btn-img" src="quorum-sensor.png" alt="Quorum Sensor - Play">
-            <span class="sc-btn-label" id="sc-btn-label">play the microbe song</span>
-        </button>
-        <iframe id="sc-iframe" width="100%" height="1" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F2265339377&color=%23e4c091&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&show_artwork=false&secret_token=s-LZ9O2nXCTOR" style="position:absolute;opacity:0;height:0;width:0;overflow:hidden;pointer-events:none;"></iframe>
-    </div>
     <section id="home-banner-box" class="home-banner loading">
         <div class="image video-slide">
             <div class="video-background">
@@ -46,18 +39,21 @@
 
     <script async src="https://www.youtube.com/iframe_api"></script>
     <section class="content">
-        <div class="donate-banner">
+        <div class="top-banner">
             <a href="#volunteers" class="donate-button">
                 Donate
             </a>
+            <div class="ode-video-banner">
+                <h3 class="ode-title">Ode to quorum sensing microbes</h3>
+                <p class="ode-subtitle">Constructing life for over 3 billion years<br>Evidenced by all present ecosystems, plants and animals.</p>
+                <div class="video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/TUW4trCpzAA?si=mp2diG_Bpl4zAGVH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
             <a href="https://climategkc.org/" class="climatekc-link">
                 <img width="300" src="./CCGKC-logo72.png" alt="Climate Change KC logo - partner organization">
             </a>
         </div>
-        <!-- <div class="temporary-announcement">
-            <h2>Intro Gardener Meeting at Tracy Garden</h2>
-            <h3>5630 Tracy, KCMO, 2:00 PM Sunday, 2/20</h3>
-        </div> -->
         <div class="intro">
             <h3>Heartland All Species Project's</h3>
             <h1 id="tracy_title">TRACY GARDEN</h1>
@@ -459,48 +455,6 @@
     <footer>
         <p>Heartland All Species Project • 5644 Charlotte • Kansas City MO 64110</p>
     </footer>
-    <script src="https://w.soundcloud.com/player/api.js"></script>
-    <script>
-        (function() {
-            var iframe = document.getElementById('sc-iframe');
-            var btn = document.getElementById('sc-play-btn');
-            var label = document.getElementById('sc-btn-label');
-            var widget = SC.Widget(iframe);
-            var ready = false;
-            var playing = false;
-
-            widget.bind(SC.Widget.Events.READY, function() {
-                ready = true;
-            });
-
-            btn.addEventListener('click', function() {
-                if (!ready) return;
-                if (playing) {
-                    widget.pause();
-                } else {
-                    widget.play();
-                }
-            });
-
-            widget.bind(SC.Widget.Events.PLAY, function() {
-                playing = true;
-                btn.classList.add('playing');
-                label.textContent = 'playing';
-            });
-
-            widget.bind(SC.Widget.Events.PAUSE, function() {
-                playing = false;
-                btn.classList.remove('playing');
-                label.textContent = 'paused';
-            });
-
-            widget.bind(SC.Widget.Events.FINISH, function() {
-                playing = false;
-                btn.classList.remove('playing');
-                label.textContent = 'play the microbe song';
-            });
-        })();
-    </script>
     <script>
         var classNames = ['top', 'bottom'];
         function removeVideoMasks() {
