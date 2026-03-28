@@ -312,6 +312,14 @@ html { scroll-behavior: smooth; }
     }
 }
 
+.event-announcement {
+    color: #fff;
+    font-size: 1.1em;
+    margin: 0.8rem 0 0;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
 .scroll-prompt {
     color: #e4c091;
     font-size: 0.95em;
