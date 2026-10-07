@@ -617,6 +617,14 @@ footer {
     line-height: 1.4;
 }
 
+.zelle-qr {
+    display: block;
+    margin: 1rem auto 0;
+    border-radius: 0.5rem;
+    background: #fff;
+    padding: 0.5rem;
+}
+
 /* Copy button styling */
 .donation-options button {
     background: linear-gradient(135deg, #ff6b35, #f7931e);
