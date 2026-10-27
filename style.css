@@ -617,6 +617,22 @@ footer {
     line-height: 1.4;
 }
 
+.payment-note--highlight {
+    color: #ffeb3b;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+}
+
+.paypal-form {
+    text-align: center;
+}
+
+.paypal-button {
+    width: 260px;
+    height: auto;
+}
+
 .zelle-qr {
     display: block;
     margin: 1rem auto 0;
