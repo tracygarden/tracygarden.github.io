@@ -782,3 +782,42 @@ footer {
         background-position: -80% 0, center;
     }
 }
+
+/* Zeffy primary donation option */
+.donation-options .payment-option--primary h4::before {
+    content: '💚';
+}
+
+.zeffy-cta {
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+.btn-zeffy,
+.btn-zeffy:visited {
+    display: inline-block;
+    background: #ffeb3b;
+    color: #222;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 2rem;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn-zeffy:hover {
+    background: #fff;
+    transform: translateY(-1px);
+}
+
+/* PayPal kept as a quiet fallback */
+.donation-options .payment-alt {
+    text-align: center;
+    font-size: 0.9em;
+    color: #999;
+}
+
+.donation-options .payment-alt a {
+    color: #bbb;
+}
